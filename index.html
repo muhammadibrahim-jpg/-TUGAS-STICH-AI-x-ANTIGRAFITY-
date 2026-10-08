@@ -1,0 +1,663 @@
+!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Alex Pratama — Senior Full-Stack &amp; Cloud Engineer</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary": "#3c0091",
+            "on-tertiary": "#00354a",
+            "on-primary-container": "#340080",
+            "surface-container-highest": "#31353f",
+            "surface-variant": "#31353f",
+            "on-primary-fixed-variant": "#5516be",
+            "surface-bright": "#353943",
+            "on-secondary-fixed": "#002113",
+            "surface-container-high": "#262a34",
+            "tertiary-fixed": "#c4e7ff",
+            "inverse-surface": "#dfe2ef",
+            "primary-fixed": "#e9ddff",
+            "error": "#ffb4ab",
+            "secondary-fixed": "#6ffbbe",
+            "outline": "#958ea0",
+            "secondary": "#4edea3",
+            "on-surface-variant": "#cbc3d7",
+            "tertiary-fixed-dim": "#7bd0ff",
+            "error-container": "#93000a",
+            "on-surface": "#dfe2ef",
+            "surface-container": "#1c1f29",
+            "on-tertiary-fixed": "#001e2c",
+            "on-secondary": "#003824",
+            "inverse-primary": "#6d3bd7",
+            "surface-container-low": "#181b25",
+            "on-tertiary-container": "#002d40",
+            "on-error": "#690005",
+            "tertiary": "#7bd0ff",
+            "tertiary-container": "#009bd1",
+            "outline-variant": "#494454",
+            "primary-container": "#a078ff",
+            "primary-fixed-dim": "#d0bcff",
+            "on-secondary-fixed-variant": "#005236",
+            "on-tertiary-fixed-variant": "#004c69",
+            "surface-tint": "#d0bcff",
+            "inverse-on-surface": "#2c303a",
+            "surface": "#0f131c",
+            "on-background": "#dfe2ef",
+            "on-secondary-container": "#00311f",
+            "on-primary-fixed": "#23005c",
+            "surface-dim": "#0f131c",
+            "secondary-fixed-dim": "#4edea3",
+            "background": "#0f131c",
+            "on-error-container": "#ffdad6",
+            "primary": "#d0bcff",
+            "surface-container-lowest": "#0a0e17",
+            "secondary-container": "#00a572"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "gutter-mobile": "1rem",
+            "margin-mobile": "1.25rem",
+            "space-xl": "2.5rem",
+            "gutter": "1.5rem",
+            "space-xs": "0.25rem",
+            "margin": "3rem",
+            "space-md": "1rem",
+            "space-3xl": "6rem",
+            "space-2xl": "4rem",
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["Space Grotesk"],
+            "headline-lg-mobile": ["Space Grotesk"],
+            "display-hero": ["Space Grotesk"],
+            "display-hero-mobile": ["Space Grotesk"],
+            "body-sm": ["Geist"],
+            "body-md": ["Geist"],
+            "label-code-lg": ["JetBrains Mono"],
+            "headline-md": ["Space Grotesk"],
+            "body-lg": ["Geist"],
+            "label-code-sm": ["JetBrains Mono"],
+            "headline-lg": ["Space Grotesk"],
+            "label-badge": ["JetBrains Mono"]
+          },
+          "fontSize": {
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+            "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
+            "label-code-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "400" }],
+            "label-code-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "label-badge": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .glass-surface {
+      background: rgba(15, 19, 28, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .ambient-glow {
+      box-shadow: 0 0 30px -10px rgba(139, 92, 246, 0.2);
+    }
+    .emerald-pulse {
+      box-shadow: 0 0 12px -2px rgba(16, 185, 129, 0.4);
+    }
+    .custom-scroll::-webkit-scrollbar {
+      display: none;
+    }
+    .custom-scroll {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased selection:bg-primary selection:text-on-primary min-h-screen pb-24">
+<!-- TOP APP BAR (Shared Component Anchor) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-gutter-mobile h-14 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-outline-variant/30">
+<div class="flex items-center gap-2">
+<!-- Profile photo leading -->
+<div class="relative w-8 h-8 rounded-full overflow-hidden border border-primary/30 p-0.5 bg-surface-container-high">
+<img class="w-full h-full object-cover rounded-full" data-alt="A portrait of a focused Southeast Asian male senior software engineer in low key studio lighting. Cool violet and cyan ambient rim lights frame his face against a dark architectural server room background, conveying technological precision and calm modern leadership." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkDs0NMovvjNieLmdOC7iVSGZtZUk-CgoxOS4sB0mD9NdUk69JDULA26cfsdyG9knlUVW1IygYyDNYm7EPG6sxXGdTNQCZQ0g_6Umk4T01V7OveoQtBu4WvZ4LC5XaMVjdzS1mXHdDJn3qOhPwUhBxN95ar-4BEG11S5M5c0C801BzqBqYUdes6k0y_CeeVPaWVb1gBrh1K1m_MRL2hPKEqCwZmeRv5Frmx2gMQNA"/>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="text-label-code-lg font-label-code-lg text-primary tracking-tight">dev@terminal:~$</span>
+</div>
+</div>
+<!-- Trailing Action: AVAILABLE badge with pulse -->
+<div class="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-secondary/10 border border-secondary/30">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping opacity-75"></span>
+<span class="w-2 h-2 rounded-full bg-secondary absolute emerald-pulse"></span>
+<span class="text-label-badge font-label-badge text-secondary font-semibold ml-2">AVAILABLE</span>
+</div>
+</header>
+<!-- MAIN CANVAS -->
+<main class="w-full max-w-md mx-auto pt-20 px-margin-mobile flex flex-col gap-y-space-xl">
+<!-- HERO SECTION -->
+<section class="flex flex-col items-start pt-2">
+<!-- Status pill -->
+<div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-surface-container-high border border-outline-variant/40 mb-space-md">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-label-badge font-label-badge text-secondary">Open for Work • Jakarta / Remote</span>
+</div>
+<!-- Identity & Title -->
+<h1 class="text-display-hero-mobile font-display-hero-mobile text-on-surface tracking-tight mb-1">
+        Alex Pratama
+      </h1>
+<p class="text-headline-sm font-headline-sm text-primary mb-3">
+        Senior Software Engineer / Full-Stack &amp; Cloud
+      </p>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed mb-space-md">
+        Membangun sistem terdistribusi scalable, arsitektur event-driven, dan antarmuka web performa tinggi dengan fokus pada keandalan operasional dan latensi ultra-rendah.
+      </p>
+<!-- Badges Spesialisasi -->
+<div class="flex flex-wrap gap-2 mb-space-lg w-full">
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-low border border-outline-variant/30">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="text-label-badge font-label-badge text-on-surface">Distributed Systems</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-low border border-outline-variant/30">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="text-label-badge font-label-badge text-on-surface">TypeScript &amp; Go</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container-low border border-outline-variant/30">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="text-label-badge font-label-badge text-on-surface">Cloud Architecture</span>
+</div>
+</div>
+<!-- Hero CTAs -->
+<div class="flex items-center gap-3 w-full">
+<a class="flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded bg-primary text-on-primary font-label-code-lg text-label-code-lg font-bold shadow-lg shadow-primary/20 hover:bg-primary-container transition-all active:scale-95 text-center" href="#contact">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+          Hubungi Saya
+        </a>
+<a class="flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded bg-surface-container-high border border-outline-variant text-on-surface font-label-code-lg text-label-code-lg hover:border-primary transition-all active:scale-95 text-center" href="#">
+<span class="material-symbols-outlined text-[18px]">download</span>
+          Download CV
+        </a>
+</div>
+</section>
+<!-- QUICK METRICS GRID (Bento Minimal) -->
+<section class="grid grid-cols-2 gap-3 w-full">
+<div class="p-3.5 rounded bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between hover:border-outline-variant transition-colors">
+<div class="flex items-center justify-between text-outline mb-2">
+<span class="text-label-code-sm font-label-code-sm uppercase">EXP</span>
+<span class="material-symbols-outlined text-[18px] text-primary">schedule</span>
+</div>
+<div>
+<span class="text-headline-md font-headline-md text-on-surface font-bold tracking-tight">6+</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Tahun Pengalaman</p>
+</div>
+</div>
+<div class="p-3.5 rounded bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between hover:border-outline-variant transition-colors">
+<div class="flex items-center justify-between text-outline mb-2">
+<span class="text-label-code-sm font-label-code-sm uppercase">PROD</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">rocket_launch</span>
+</div>
+<div>
+<span class="text-headline-md font-headline-md text-on-surface font-bold tracking-tight">28+</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Proyek Dirilis</p>
+</div>
+</div>
+<div class="p-3.5 rounded bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between hover:border-outline-variant transition-colors">
+<div class="flex items-center justify-between text-outline mb-2">
+<span class="text-label-code-sm font-label-code-sm uppercase">SLA</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">verified_user</span>
+</div>
+<div>
+<span class="text-headline-md font-headline-md text-secondary font-bold tracking-tight">99.9%</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Uptime Track Record</p>
+</div>
+</div>
+<div class="p-3.5 rounded bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between hover:border-outline-variant transition-colors">
+<div class="flex items-center justify-between text-outline mb-2">
+<span class="text-label-code-sm font-label-code-sm uppercase">OPEN SOURCE</span>
+<span class="material-symbols-outlined text-[18px] text-primary">grade</span>
+</div>
+<div>
+<span class="text-headline-md font-headline-md text-on-surface font-bold tracking-tight">1.2k+</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant">Stars di GitHub</p>
+</div>
+</div>
+</section>
+<!-- INTERACTIVE TERMINAL / ABOUT SNIPPET -->
+<section class="w-full rounded bg-surface-container-lowest border border-outline-variant/40 overflow-hidden font-label-code-sm">
+<div class="bg-surface-container-high px-3 py-2 flex items-center justify-between border-b border-outline-variant/30">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-error/70"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-yellow-500/70"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-secondary/70"></span>
+<span class="text-label-code-sm font-label-code-sm text-outline ml-2">bio.sh • zsh</span>
+</div>
+<span class="text-outline text-label-code-sm font-label-code-sm">UTF-8</span>
+</div>
+<div class="p-3 text-on-surface leading-5 space-y-1.5">
+<p class="text-outline-variant"># ringkasan arsitektural insinyur</p>
+<p><span class="text-secondary">$</span> cat &lt;&lt; 'INFO'</p>
+<p class="text-on-surface-variant pl-2 border-l border-outline-variant/40">
+<span class="text-primary font-bold">role:</span> Senior Full-Stack &amp; Platform Engineer<br/>
+<span class="text-primary font-bold">core:</span> Go, Node.js, Next.js, Kubernetes<br/>
+<span class="text-primary font-bold">focus:</span> High-Throughput APIs, Event Sourcing, DX<br/>
+<span class="text-primary font-bold">motto:</span> "Simplicity is prerequisite for reliability"
+        </p>
+<p class="text-secondary">INFO</p>
+<p class="flex items-center gap-1 text-primary">
+<span>&gt; status: ready_for_deployment</span>
+<span class="w-1.5 h-3.5 bg-primary animate-pulse inline-block"></span>
+</p>
+</div>
+</section>
+<!-- CORE TECH STACK SECTION -->
+<section class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">code</span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Core Tech Stack</h2>
+</div>
+<span class="text-label-code-sm font-label-code-sm text-outline">v2024.3</span>
+</div>
+<!-- Categories Container -->
+<div class="space-y-2.5">
+<!-- Frontend -->
+<div class="p-3 rounded bg-surface-container-low border border-outline-variant/30">
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-code-sm font-label-code-sm text-primary uppercase font-semibold">01 / Frontend &amp; Mobile</span>
+<span class="text-label-code-sm font-label-code-sm text-outline">Client Layer</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container border border-outline-variant/30 text-label-badge font-label-badge text-on-surface flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>React
+            </span>
+<span class="px-2 py-0.5 rounded bg-surface-container border border-outline-variant/30 text-label-badge font-label-badge text-on-surface flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Next.js 14
+            </span>
+<span class="px-2 py-0.5 rounded bg-surface-container border border-outline-variant/30 text-label-badge font-label-badge text-on-surface flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>TypeScript
+            </span>
+<span class="px-2 py-0.5 rounded bg-surface-container border border-outline-variant/30 text-label-badge font-label-badge text-on-surface flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Tailwind CSS
+            </span>
+<span class="px-2 py-0.5 rounded bg-surface-container border border-outline-variant/30 text-label-badge font-label-badge text-on-surface flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Flutter
+            </span>
+</div>
+</div>
+<!-- Backend -->
+<div class="p-3 rounded bg-surface-container-low border border-outline-variant/30">
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-code-sm font-label-code-sm text-primary uppercase font-semibold">02 / Backend &amp; Microservices</span>
+<span class="text-label-code-sm font-label-code-sm text-outline">Core Engine</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container border border-outline-variant/30 text-label-badge font-label-badge text-on-surface flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Go (Golang)
+            </span>
+<span class="px-2 py-0.5 rounded bg-surface-container border border-outline-variant/30 text-label-badge font-label-badge text-on-surface flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Node.js
+            </span>
+<span class="px-2 py-0.5 rounded bg-surface-container border border-outline-variant/30 text-label-badge font-label-badge text-on-surface flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Python / FastAPI
+            </span>
+<span class="px-2 py-0.5 rounded bg-surface-container border border-outline-variant/30 text-label-badge font-label-badge text-on-surface flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>gRPC &amp; Protobuf
+            </span>
+</div>
+</div>
+<!-- Infra & Cloud -->
+<div class="p-3 rounded bg-surface-container-low border border-outline-variant/30">
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-code-sm font-label-code-sm text-primary uppercase font-semibold">03 / Infrastructure &amp; DevOps</span>
+<span class="text-label-code-sm font-label-code-sm text-outline">Platform Ops</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container border border-outline-variant/30 text-label-badge font-label-badge text-on-surface flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>AWS (EKS, Lambda)
+            </span>
+<span class="px-2 py-0.5 rounded bg-surface-container border border-outline-variant/30 text-label-badge font-label-badge text-on-surface flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Docker &amp; K8s
+            </span>
+<span class="px-2 py-0.5 rounded bg-surface-container border border-outline-variant/30 text-label-badge font-label-badge text-on-surface flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Terraform
+            </span>
+<span class="px-2 py-0.5 rounded bg-surface-container border border-outline-variant/30 text-label-badge font-label-badge text-on-surface flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>CI/CD GitHub Actions
+            </span>
+</div>
+</div>
+<!-- Databases -->
+<div class="p-3 rounded bg-surface-container-low border border-outline-variant/30">
+<div class="flex items-center justify-between mb-2">
+<span class="text-label-code-sm font-label-code-sm text-primary uppercase font-semibold">04 / Persistence &amp; Caching</span>
+<span class="text-label-code-sm font-label-code-sm text-outline">Storage Tier</span>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container border border-outline-variant/30 text-label-badge font-label-badge text-on-surface flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>PostgreSQL
+            </span>
+<span class="px-2 py-0.5 rounded bg-surface-container border border-outline-variant/30 text-label-badge font-label-badge text-on-surface flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Redis Cluster
+            </span>
+<span class="px-2 py-0.5 rounded bg-surface-container border border-outline-variant/30 text-label-badge font-label-badge text-on-surface flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Apache Kafka
+            </span>
+<span class="px-2 py-0.5 rounded bg-surface-container border border-outline-variant/30 text-label-badge font-label-badge text-on-surface flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>Elasticsearch
+            </span>
+</div>
+</div>
+</div>
+</section>
+<!-- FEATURED PROJECTS SECTION -->
+<section class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">layers</span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Featured Projects</h2>
+</div>
+<span class="text-label-code-sm font-label-code-sm text-outline">3 selected</span>
+</div>
+<!-- Project Card 1: Cloud-Native Payment Engine -->
+<article class="rounded bg-surface-container-low border border-outline-variant/40 overflow-hidden ambient-glow">
+<div class="p-3 bg-surface-container-high border-b border-outline-variant/30 flex items-center justify-between">
+<span class="text-label-code-sm font-label-code-sm text-on-surface-variant">~/projects/apex-pay-core</span>
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="text-label-badge font-label-badge text-secondary font-semibold">PRODUCTION</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-3">
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-semibold">ApexPay: Distributed Settlement Engine</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">
+              Mesin pemrosesan transaksi berkapasitas 15.000 TPS dengan idempotency guarantee, rekonsiliasi otomatis multi-bank, dan audit trail berbasis event sourcing.
+            </p>
+</div>
+<!-- Architecture & Impact metric -->
+<div class="grid grid-cols-2 gap-2 p-2.5 rounded bg-surface-container-lowest border border-outline-variant/20 font-label-code-sm">
+<div>
+<span class="text-outline text-label-code-sm font-label-code-sm block">THROUGHPUT</span>
+<span class="text-secondary font-bold text-label-code-lg font-label-code-lg">15,000 TPS</span>
+</div>
+<div>
+<span class="text-outline text-label-code-sm font-label-code-sm block">P99 LATENCY</span>
+<span class="text-primary font-bold text-label-code-lg font-label-code-lg">&lt; 42ms</span>
+</div>
+</div>
+<!-- Tech stack chips -->
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container text-label-badge font-label-badge text-on-surface-variant">Go</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-label-badge font-label-badge text-on-surface-variant">Apache Kafka</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-label-badge font-label-badge text-on-surface-variant">PostgreSQL</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-label-badge font-label-badge text-on-surface-variant">AWS EKS</span>
+</div>
+<!-- Project Actions -->
+<div class="flex items-center gap-2 pt-1 border-t border-outline-variant/20">
+<a class="flex-1 flex items-center justify-center gap-1.5 py-1.5 px-3 rounded bg-surface-container-high border border-outline-variant text-label-code-sm font-label-code-sm text-on-surface hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+              Demo Arsitektur
+            </a>
+<a class="flex-1 flex items-center justify-center gap-1.5 py-1.5 px-3 rounded bg-surface-container-high border border-outline-variant text-label-code-sm font-label-code-sm text-on-surface hover:text-secondary transition-colors" href="#">
+<span class="material-symbols-outlined text-[16px]">terminal</span>
+              Source GitHub
+            </a>
+</div>
+</div>
+</article>
+<!-- Project Card 2: Real-time Observability Hub -->
+<article class="rounded bg-surface-container-low border border-outline-variant/40 overflow-hidden">
+<div class="p-3 bg-surface-container-high border-b border-outline-variant/30 flex items-center justify-between">
+<span class="text-label-code-sm font-label-code-sm text-on-surface-variant">~/projects/sentinel-telemetry</span>
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="text-label-badge font-label-badge text-secondary font-semibold">DEPLOYED</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-3">
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-semibold">Sentinel: Cloud Observability Suite</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">
+              Dashboard analitik metrik cloud real-time dengan streaming WebSockets, anomaly detection bertenaga AI, dan integrasi alert PagerDuty.
+            </p>
+</div>
+<div class="grid grid-cols-2 gap-2 p-2.5 rounded bg-surface-container-lowest border border-outline-variant/20 font-label-code-sm">
+<div>
+<span class="text-outline text-label-code-sm font-label-code-sm block">DATA PROCESSED</span>
+<span class="text-secondary font-bold text-label-code-lg font-label-code-lg">4.2 TB / Day</span>
+</div>
+<div>
+<span class="text-outline text-label-code-sm font-label-code-sm block">STREAM JITTER</span>
+<span class="text-primary font-bold text-label-code-lg font-label-code-lg">&lt; 18ms</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container text-label-badge font-label-badge text-on-surface-variant">Next.js 14</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-label-badge font-label-badge text-on-surface-variant">TypeScript</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-label-badge font-label-badge text-on-surface-variant">ClickHouse</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-label-badge font-label-badge text-on-surface-variant">WebSockets</span>
+</div>
+<div class="flex items-center gap-2 pt-1 border-t border-outline-variant/20">
+<a class="flex-1 flex items-center justify-center gap-1.5 py-1.5 px-3 rounded bg-surface-container-high border border-outline-variant text-label-code-sm font-label-code-sm text-on-surface hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+              Live Dashboard
+            </a>
+<a class="flex-1 flex items-center justify-center gap-1.5 py-1.5 px-3 rounded bg-surface-container-high border border-outline-variant text-label-code-sm font-label-code-sm text-on-surface hover:text-secondary transition-colors" href="#">
+<span class="material-symbols-outlined text-[16px]">code</span>
+              View Code
+            </a>
+</div>
+</div>
+</article>
+<!-- Project Card 3: Cloud Edge Cache Engine -->
+<article class="rounded bg-surface-container-low border border-outline-variant/40 overflow-hidden">
+<div class="p-3 bg-surface-container-high border-b border-outline-variant/30 flex items-center justify-between">
+<span class="text-label-code-sm font-label-code-sm text-on-surface-variant">~/projects/kestrel-cache</span>
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="text-label-badge font-label-badge text-primary font-semibold">OPEN SOURCE</span>
+</div>
+</div>
+<div class="p-4 flex flex-col gap-3">
+<div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-semibold">Kestrel: Multi-Region In-Memory Cache</h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1">
+              Library caching terdistribusi ringan dengan enkripsi ChaCha20 bawaan dan automatic consistency invalidation across Kubernetes pods.
+            </p>
+</div>
+<div class="grid grid-cols-2 gap-2 p-2.5 rounded bg-surface-container-lowest border border-outline-variant/20 font-label-code-sm">
+<div>
+<span class="text-outline text-label-code-sm font-label-code-sm block">GITHUB STARS</span>
+<span class="text-secondary font-bold text-label-code-lg font-label-code-lg">1,240 ★</span>
+</div>
+<div>
+<span class="text-outline text-label-code-sm font-label-code-sm block">CACHE HIT RATE</span>
+<span class="text-primary font-bold text-label-code-lg font-label-code-lg">98.4%</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container text-label-badge font-label-badge text-on-surface-variant">Go</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-label-badge font-label-badge text-on-surface-variant">Redis</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-label-badge font-label-badge text-on-surface-variant">Docker</span>
+</div>
+<div class="flex items-center gap-2 pt-1 border-t border-outline-variant/20">
+<a class="flex-1 flex items-center justify-center gap-1.5 py-1.5 px-3 rounded bg-surface-container-high border border-outline-variant text-label-code-sm font-label-code-sm text-on-surface hover:text-secondary transition-colors" href="#">
+<span class="material-symbols-outlined text-[16px]">terminal</span>
+              Install pkg/go
+            </a>
+<a class="flex-1 flex items-center justify-center gap-1.5 py-1.5 px-3 rounded bg-surface-container-high border border-outline-variant text-label-code-sm font-label-code-sm text-on-surface hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[16px]">star</span>
+              Star Repository
+            </a>
+</div>
+</div>
+</article>
+</section>
+<!-- CAREER TIMELINE / EXPERIENCE SECTION -->
+<section class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">work_history</span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Career Timeline</h2>
+</div>
+<span class="text-label-code-sm font-label-code-sm text-outline">2018 — Present</span>
+</div>
+<div class="relative border-l border-outline-variant/40 ml-3 pl-4 space-y-6">
+<!-- Timeline Item 1 -->
+<div class="relative">
+<span class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 rounded-full bg-secondary ring-4 ring-background"></span>
+<div class="flex items-baseline justify-between mb-0.5">
+<span class="text-label-code-sm font-label-code-sm text-secondary font-semibold">2022 — SEKARANG</span>
+<span class="text-label-code-sm font-label-code-sm text-outline">Full-time</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-semibold">Lead Systems Engineer</h3>
+<p class="text-body-sm font-body-sm text-primary mb-2">PT Fintek Solusi Nusantara • Jakarta (Hybrid)</p>
+<ul class="text-body-sm font-body-sm text-on-surface-variant space-y-1.5 list-disc list-inside">
+<li>Memimpin tim 8 engineer mendesain ulang payment core, menurunkan cloud billing AWS sebesar 38%.</li>
+<li>Mengimplementasikan Zero-Downtime Blue-Green deployment pipeline pada kluster Kubernetes.</li>
+<li>Mencapai 99.98% SLA pada layanan gerbang pembayaran mitra tier-1.</li>
+</ul>
+</div>
+<!-- Timeline Item 2 -->
+<div class="relative">
+<span class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 rounded-full bg-primary ring-4 ring-background"></span>
+<div class="flex items-baseline justify-between mb-0.5">
+<span class="text-label-code-sm font-label-code-sm text-primary font-semibold">2020 — 2022</span>
+<span class="text-label-code-sm font-label-code-sm text-outline">Full-time</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-semibold">Senior Full-Stack Engineer</h3>
+<p class="text-body-sm font-body-sm text-primary mb-2">Nusantara Cloud Labs • Remote</p>
+<ul class="text-body-sm font-body-sm text-on-surface-variant space-y-1.5 list-disc list-inside">
+<li>Membangun SaaS portal dengan Next.js dan Go API, menangani 200k Monthly Active Users.</li>
+<li>Mengoptimalkan database query Postgres &amp; caching Redis, mengurangi response time p95 dari 450ms menjadi 65ms.</li>
+<li>Mentoring 5 junior &amp; mid-level developer dalam penerapan best practice Clean Architecture.</li>
+</ul>
+</div>
+<!-- Timeline Item 3 -->
+<div class="relative">
+<span class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 rounded-full bg-outline ring-4 ring-background"></span>
+<div class="flex items-baseline justify-between mb-0.5">
+<span class="text-label-code-sm font-label-code-sm text-outline font-semibold">2018 — 2020</span>
+<span class="text-label-code-sm font-label-code-sm text-outline">Full-time</span>
+</div>
+<h3 class="text-headline-sm font-headline-sm text-on-surface font-semibold">Software Developer</h3>
+<p class="text-body-sm font-body-sm text-primary mb-2">Alpha Digital Studio • Bandung</p>
+<ul class="text-body-sm font-body-sm text-on-surface-variant space-y-1.5 list-disc list-inside">
+<li>Mengembangkan aplikasi mobile e-commerce menggunakan React Native dan backend Node.js.</li>
+<li>Membangun integrasi third-party API logistik dan payment gateway lokal.</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- CONTACT FORM & CONNECT -->
+<section class="flex flex-col gap-3 rounded bg-surface-container-low border border-outline-variant/30 p-4" id="contact">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">send</span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface">Hubungi Saya</h2>
+</div>
+<span class="text-label-badge font-label-badge text-secondary">ACTIVE INBOX</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+        Tertarik merekrut untuk peran Senior/Lead Full-Stack atau mendiskusikan konsultasi arsitektur sistem? Silakan kirim pesan langsung.
+      </p>
+<form class="space-y-3 mt-1" onsubmit="event.preventDefault(); alert('Terima kasih! Pesan Anda telah terkirim.');">
+<div>
+<label class="block text-label-code-sm font-label-code-sm text-on-surface mb-1" for="name">NAMA LENGKAP</label>
+<input class="w-full bg-surface-container-high border border-outline-variant/40 rounded px-3 py-2 text-on-surface text-body-md font-body-md placeholder:text-outline/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none" id="name" placeholder="John Doe / Tech Recruiter" required="" type="text"/>
+</div>
+<div>
+<label class="block text-label-code-sm font-label-code-sm text-on-surface mb-1" for="email">EMAIL KORPORAT</label>
+<input class="w-full bg-surface-container-high border border-outline-variant/40 rounded px-3 py-2 text-on-surface text-body-md font-body-md placeholder:text-outline/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none" id="email" placeholder="name@company.com" required="" type="email"/>
+</div>
+<div>
+<label class="block text-label-code-sm font-label-code-sm text-on-surface mb-1" for="message">PESAN / DETAIL PROYEK</label>
+<textarea class="w-full bg-surface-container-high border border-outline-variant/40 rounded px-3 py-2 text-on-surface text-body-md font-body-md placeholder:text-outline/50 focus:border-primary focus:ring-1 focus:ring-primary outline-none resize-none" id="message" placeholder="Sebutkan cakupan peran atau tantangan teknis..." required="" rows="3"></textarea>
+</div>
+<button class="w-full py-2.5 px-4 rounded bg-primary text-on-primary font-label-code-lg text-label-code-lg font-bold flex items-center justify-center gap-2 hover:bg-primary-container transition-all active:scale-95" type="submit">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+          Kirim Pesan Sekarang
+        </button>
+</form>
+<!-- Quick Channels -->
+<div class="pt-3 border-t border-outline-variant/20 flex flex-col gap-2">
+<span class="text-label-code-sm font-label-code-sm text-outline">DIRECT CHANNELS</span>
+<div class="grid grid-cols-3 gap-2">
+<a class="flex items-center justify-center gap-1.5 p-2 rounded bg-surface-container-high border border-outline-variant/30 text-label-code-sm font-label-code-sm text-on-surface hover:text-primary transition-colors" href="https://github.com" target="_blank">
+<span>GitHub</span>
+</a>
+<a class="flex items-center justify-center gap-1.5 p-2 rounded bg-surface-container-high border border-outline-variant/30 text-label-code-sm font-label-code-sm text-on-surface hover:text-primary transition-colors" href="https://linkedin.com" target="_blank">
+<span>LinkedIn</span>
+</a>
+<a class="flex items-center justify-center gap-1.5 p-2 rounded bg-surface-container-high border border-outline-variant/30 text-label-code-sm font-label-code-sm text-on-surface hover:text-secondary transition-colors" href="mailto:alex.pratama@engineer.dev">
+<span>Email</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER (Shared Component Anchor) -->
+<footer class="w-full px-gutter-mobile py-space-xl mb-16 flex flex-col items-center gap-space-md bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-outline-variant/20">
+<div class="flex items-center gap-4 text-label-code-sm font-label-code-sm">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary transition-colors duration-150" href="https://github.com">GitHub</a>
+<span class="text-outline-variant">•</span>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary transition-colors duration-150" href="mailto:alex@dev.internal">Email</a>
+<span class="text-outline-variant">•</span>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary transition-colors duration-150" href="#">Resume</a>
+<span class="text-outline-variant">•</span>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-secondary dark:hover:text-secondary transition-colors duration-150" href="#">Terminal</a>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant text-center max-w-xs">
+      © 2024 Systems Architect. Built with clean code &amp; zero bloat.
+    </p>
+</footer>
+<!-- BOTTOM NAVIGATION BAR (Shared Component Anchor) -->
+<!-- Contextual Active: Primary intent of page is full portfolio Overview -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter-mobile py-2 bg-surface-container/90 dark:bg-surface-container/90 backdrop-blur-md border-t border-outline-variant/30 md:hidden">
+<!-- Tab 1: Overview (Active) -->
+<a class="flex flex-col items-center justify-center text-secondary dark:text-secondary py-1 transition-all duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="terminal">terminal</span>
+<span class="text-label-code-sm font-label-code-sm mt-0.5">Overview</span>
+</a>
+<!-- Tab 2: Stack -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant py-1 hover:text-primary dark:hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="code">code</span>
+<span class="text-label-code-sm font-label-code-sm mt-0.5">Stack</span>
+</a>
+<!-- Tab 3: Projects -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant py-1 hover:text-primary dark:hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="layers">layers</span>
+<span class="text-label-cod
+
+e-sm font-label-code-sm mt-0.5">Projects</span>
+</a>
+<!-- Tab 4: Career -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant py-1 hover:text-primary dark:hover:text-primary transition-colors duration-150 active:scale-95" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="work_history">work_history</span>
+<span class="text-label-code-sm font-label-code-sm mt-0.5">Career</span>
+</a>
+</nav>
+</body></html>
